@@ -11,21 +11,19 @@ def parse_input(a):
 def analysis(your_list):
 	your_dict = {}
 	for i in your_list:
-		if i in your_dict:
-			your_dict[i] += 1
+		if i in your_dict:	
+			your_dict[i][0] += 1
 		else:
-			your_dict[i] = 1
+			your_dict[i] = [1]
 	return your_dict
  
 
 def count_sum(your_dict):
-	new_list = list()
 	current = 0
 	for i in your_dict.values():
-		new_list.append(i+current)
-		current += i
-	print(your_dict)
-	return new_list
+		i.append(i[0]+current)
+		current += i[0]
+	return your_dict
 
 
 @app.route("/")
@@ -39,9 +37,11 @@ def Task1():
 	if request.method == 'POST':
 		a = request.form.get('feild1')
 		b = request.form.get('feild2')
+		c = request.form.get('feild3')
 		line_a = parse_input(a)
 		line_b = parse_input(b)
-		line_c = line_a + line_b
-		result = analysis(line_c)
-		count_sum(result)
+		line_c = parse_input(c)
+		line_d = line_a + line_b + line_c
+		result = analysis(sorted(line_d))
+		print(count_sum(result))
 	return render_template('task1.html', result=result)

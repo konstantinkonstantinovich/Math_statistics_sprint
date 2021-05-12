@@ -18,6 +18,9 @@
 				<div class="form-group">
 					 <input class="form-control transparent-input" type='text' name='feild2' placeholder="Input B...">
 				</div>
+				<div class="form-group">
+					 <input class="form-control transparent-input" type='text' name='feild3' placeholder="Input C...">
+				</div>
 				<button class="submit_button" type="submit">Calculate</button>
 			</form>
 		</div>
@@ -33,8 +36,8 @@
 					{% for key, value in result.items() %}
 						<div class="table-row">	
 							<div class="table-data">{{ key }}</div>
-							<div class="table-data"> {{ value }}</div>
-							<div class="table-data"> 1</div>
+							<div class="table-data"> {{ value[0] }}</div>
+							<div class="table-data">{{ value[1]}}</div>
 						</div>	
 					{% endfor %}
 				</div>
