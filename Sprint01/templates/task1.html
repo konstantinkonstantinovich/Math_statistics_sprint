@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+	<h1 class="name">Task 1</h1>
+	<div class="container">
+		<div class="row1">
+			<form action="" method="post">
+				<h1>Input two rows!</h1>
+<!-- 				<span>Set count </span><input class="form-control transparent-input" type="number" max = "5" min = "0" value="0" id = "set_size">
+				<div class="new_input">
+					
+				</div> -->
+				<div class="form-group">
+					 <input class="form-control transparent-input" type='text' name='feild1' placeholder="Input A..."  required>
+				</div>
+				<div class="form-group">
+					 <input class="form-control transparent-input" type='text' name='feild2' placeholder="Input B...">
+				</div>
+				<button class="submit_button" type="submit">Calculate</button>
+			</form>
+		</div>
+
+		{% if result %}
+			<div class="table">
+				<div class="table-header">
+					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Sample</a></div>
+					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Count</a></div>
+					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Sum</a></div>
+				</div>
+				<div class="table-content">
+					{% for key, value in result.items() %}
+						<div class="table-row">	
+							<div class="table-data">{{ key }}</div>
+							<div class="table-data"> {{ value }}</div>
+							<div class="table-data"> 1</div>
+						</div>	
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+	</div>	
+	<script>
+		document.getElementById("set_size").onchange = () => {
+
+		    remove_elemelts_with_class("form-group");
+
+		    let set_count = document.getElementById("set_size").value;
+		    
+		    let str = "";
+		    for (let i = 0; i < set_count; i++) {
+		        str += "<input class='form-control transparent-input' type='text' name='feild1' placeholder='Input A...'  required>";
+		    }
+		    
+		    create_html_element(str, "div", "form-group", "new_input", 'class');
+		}
+
+		function remove_elemelts_with_class(class_name) {
+
+		    let elements = document.getElementsByClassName(class_name);
+		    let count = elements.length;
+
+		    for (let i = 0; i < count; i++) {
+		        elements[0].remove();
+		    }
+		}
+
+
+		function create_html_element(str, type ,class_name, parrent , mode) {
+		    let input_box = document.createElement(type);
+		    input_box.classList.add(class_name);
+		    input_box.innerHTML = str;
+
+		    if (mode == "id") {
+		        document.getElementById(parrent).appendChild(input_box); 
+		    } else if (mode == "class") {
+		        document.getElementsByClassName(parrent)[0].appendChild(input_box); 
+		    } else if (mode == "body") {
+		        document.body.appendChild(input_box); 
+		    } else {
+		        console.log("Error creating element");
+		        return NaN;
+		    }
+		    return input_box;
+		}
+	</script>
+{% endblock %}

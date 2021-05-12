@@ -42,14 +42,14 @@
               <nav class="site-navigation text-right ml-auto " role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li class="active"><a href="https://github.com/konstantinkonstantinovich/Math_statistics_sprint.git" class="nav-link">Github</a></li>
-                  <li><a href="project.html" class="nav-link">Task 1</a></li>
+                  <li><a href="{{ url_for('Task1') }}" class="nav-link">Task 1</a></li>
                   <li><a href="services.html" class="nav-link">Task 2</a></li>
                 </ul>
               </nav>
             </div>
             <div class="col-lg-4 text-center">
               <div class="site-logo">
-                <a href="#">Math statistics</a>
+                <a href="{{ url_for('main') }}">Math statistics</a>
               </div>
 
 
@@ -72,7 +72,7 @@
       </header>
     
 
-    <div class="hero" style="background-image: url('static/images/hero_1.jpg');">{% block content %}{% endblock %}</div>
+    <div class="hero" style="background-image: url('static/images/hero_1.jpg'); background-size: cover;">{% block content %}{% endblock %}</div>
   
 
 

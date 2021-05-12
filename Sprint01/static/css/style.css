@@ -1,7 +1,8 @@
-body {
+body,html {
   font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: #fff;
   height: 200vh;
+   min-height: 100%;
   position: relative; }
   body:before {
     content: "";
@@ -47,6 +48,107 @@ a {
   background-position: center center;
   background-repeat: no-repeat; }
 
+/* task 1*/
+
+.name {
+  text-align: center;
+}
+
+
+div.row1 {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding: 15px;
+}
+
+input.transparent-input{
+  border: 2px solid gray;
+  border-radius: 5px; 
+  background-color:transparent !important;
+}
+
+.submit_button {
+  border:2px solid gray; 
+  background-color: transparent;
+  border-radius: 5px;
+  width: 50%;
+  outline: none;
+}
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+$color-alpha: #1772FF;
+$color-form-highlight: #EEEEEE;
+
+*, *:before, *:after {
+  box-sizing:border-box;
+}
+
+.table {
+  margin: 20px auto;
+  width:50%;
+  border-radius: 30px; 
+}
+
+.table-header {
+  display:flex;
+  width:100%;
+  background:#000;
+  padding:($half-spacing-unit * 1.5) 0;
+}
+
+.table-row {
+  border-bottom: 1px solid gray; 
+
+  display:flex;
+  width:100%;
+  padding:($half-spacing-unit * 1.5) 0;
+  
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.table-data, .header__item {
+  flex: 1 1 20%;
+  text-align:center;
+}
+
+.header__item {
+  text-transform:uppercase;
+}
+
+.filter__link {
+  color:white;
+  text-decoration: none;
+  position:relative;
+  display:inline-block;
+  padding-left:$base-spacing-unit;
+  padding-right:$base-spacing-unit;
+  
+  &::after {
+    content:'';
+    position:absolute;
+    right:-($half-spacing-unit * 1.5);
+    color:white;
+    font-size:$half-spacing-unit;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  &.desc::after {
+    content: '(desc)';
+  }
+
+  &.asc::after {
+    content: '(asc)';
+  }
+  
+}
+
+/* task 1 end */
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
@@ -62,7 +164,7 @@ a {
     padding: 0;
     font-size: 1.7rem; }
     .site-navbar .site-logo a {
-      color: #89ba16;
+      color: #d6c61a;
       text-transform: lowercase; }
     @media (max-width: 991.98px) {
       .site-navbar .site-logo {
@@ -75,7 +177,7 @@ a {
     padding: 0;
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active {
-      color: #89ba16 !important; }
+      color: #baa716 !important; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
       display: inline-block; }
@@ -91,7 +193,7 @@ a {
         .site-navbar .site-navigation .site-menu > li > a:hover {
           color: #89ba16; }
       .site-navbar .site-navigation .site-menu > li.active > a {
-        color: #89ba16 !important; }
+        color: #d6c61a !important; }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -258,7 +360,7 @@ a {
       .site-mobile-menu .site-nav-wrap li .nav-link.active {
         color: #89ba16; }
       .site-mobile-menu .site-nav-wrap li.active > a {
-        color: #89ba16; }
+        color: #d6c61a; }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;
       right: 0px;
@@ -357,3 +459,4 @@ a {
       .sticky-wrapper .shrink {
         padding-top: 30px !important;
         padding-bottom: 30px !important; } }
+
