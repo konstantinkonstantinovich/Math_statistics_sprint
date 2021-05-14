@@ -29,8 +29,11 @@
 			<div class="table">
 				<div class="table-header">
 					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Sample</a></div>
-					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Count</a></div>
-					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Sum</a></div>
+					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Frequency</a></div>
+					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Accumulative frequency</a></div>
+					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Relative frequency</a></div>
+					<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">					Comulative-Relative frequency</a></div>
+
 				</div>
 				<div class="table-content">
 					{% for key, value in result.items() %}
@@ -38,6 +41,8 @@
 							<div class="table-data">{{ key }}</div>
 							<div class="table-data"> {{ value[0] }}</div>
 							<div class="table-data">{{ value[1]}}</div>
+							<div class="table-data">{{ value[2] }}</div>
+							<div class="table-data">{{ value[3] }}</div>
 						</div>	
 					{% endfor %}
 				</div>

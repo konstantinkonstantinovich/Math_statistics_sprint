@@ -18,13 +18,28 @@ def analysis(your_list):
 	return your_dict
  
 
-def count_sum(your_dict):
+def comulative_relative_frequency(your_dict):
+	current = 0
+	for i in your_dict.values():
+		i.append(i[2]+current)
+		current += i[2]
+		i[3] = round(i[3], 5)
+	return your_dict
+
+
+def relative_frequency(your_dict):
+	for i in your_dict.values():
+		i.append(i[0]/len(your_dict.keys()))
+		i[2] = round(i[2], 5)
+	return your_dict
+
+
+def accumulative_frequency(your_dict):
 	current = 0
 	for i in your_dict.values():
 		i.append(i[0]+current)
 		current += i[0]
 	return your_dict
-
 
 @app.route("/")
 def main():
@@ -43,5 +58,9 @@ def Task1():
 		line_c = parse_input(c)
 		line_d = line_a + line_b + line_c
 		result = analysis(sorted(line_d))
-		print(count_sum(result))
+		print(accumulative_frequency(result))
+		print(relative_frequency(result))
+		print(comulative_relative_frequency(result))
 	return render_template('task1.html', result=result)
+
+
